@@ -79,7 +79,7 @@ def lstm_prediction(prices, time_step=TIME_STEP):
     X_train, y_train = X[:train_size], y[:train_size]
     X_val, y_val = X[train_size:], y[train_size:]
     early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
-    model.fit(X_train, y_train, epochs=1, validation_data=(X_val, y_val), callbacks=[early_stopping], verbose=1)
+    model.fit(X_train, y_train, epochs=10, validation_data=(X_val, y_val), callbacks=[early_stopping], verbose=1)
     
     # Predict Next Closing Price
     test_data = prices_scaled[-time_step:].reshape(1, time_step, 1)
