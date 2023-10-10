@@ -99,13 +99,21 @@ print(f"Max Drawdown: {data['Drawdown'].min():.2%}")
 # print("Correlation between Volume and Daily Returns:", correlation)
 
 # Predict the next closing price while skipping weekends for the predicted date. 
-# The prediction is based on LSTM model and the result is printed.
 predicted_next_closing = lstm_prediction(data['Close'].values)
-predicted_date = data.index[-1]
-for _ in range(1):  # moving to the next day
+
+# Days difference
+days_diff = (pd.Timestamp.today() - data.index[-1]).days
+
+# Predict the next closing price for tomorrow (or next business day).
+predicted_date = data.index[-1] + pd.Timedelta(days=1)
+
+# If today's data is already included in the dataset, advance by one day
+if predicted_date == pd.Timestamp.today():
     predicted_date += pd.Timedelta(days=1)
-    while predicted_date.weekday() > 4:  # 5: Saturday, 6: Sunday
-        predicted_date += pd.Timedelta(days=1)
+
+# Skip weekends
+while predicted_date.weekday() > 4:  # 5: Saturday, 6: Sunday
+    predicted_date += pd.Timedelta(days=1)
 
 print(f"Predicted closing price for {predicted_date.strftime('%Y-%m-%d')}: ${predicted_next_closing:.2f}")
 
