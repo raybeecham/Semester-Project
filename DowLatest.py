@@ -1,3 +1,23 @@
+"""
+Dow Jones Data Fetcher and Exporter Script
+
+Description:
+    This script fetches the latest historical data for the Dow Jones Industrial Average 
+    from Yahoo Finance using the yfinance library and exports it to an Excel file.
+
+Usage:
+    python DowLatest.py
+
+Created by: Raymond Beecham
+Date: October 10, 2023
+Version: 1.0
+Contact: rb102@my.tamuct.edu
+
+Dependencies:
+    - yfinance
+    - openpyxl
+"""
+
 import yfinance as yf
 
 # Fetch the Dow Jones Industrial Average data

@@ -1,3 +1,35 @@
+"""
+Dow Jones Prediction and Analysis Script
+
+Description:
+    This script analyzes historical data for the Dow Jones Industrial Average from Yahoo Finance.
+    It uses a Long Short-Term Memory (LSTM) neural network to predict future closing prices, displays
+    significant historical events on the timeline, and visualizes other relevant statistics and indicators
+    such as moving averages, trading volume, and volatility (Average True Range).
+
+Usage:
+    python TrendAnalysis.py
+
+Created by: Raymond Beecham
+Date: October 11, 2023
+Version: 4.0
+Contact: rb102@my.tamuct.edu
+
+Dependencies:
+    - numpy
+    - pandas
+    - matplotlib
+    - yfinance
+    - scikit-learn
+    - tensorflow
+    - datetime
+
+Notes:
+    - Modify TICKER to analyze different stocks or indices.
+    - Adjust TIME_STEP and ATR_PERIOD constants for tuning the LSTM and ATR calculations.
+    - Add or modify dates in 'important_dates_and_events' dictionary for additional annotations on the plot.
+"""
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
