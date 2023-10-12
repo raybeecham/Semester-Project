@@ -32,3 +32,6 @@ This research offers a holistic perspective on stock market dynamics, providing 
 2. Install the required libraries: `pip install pandas matplotlib yfinance tensorflow`.
 3. Clone the repository: `git clone <repository-link>`.
 4. Navigate to the directory and run the main script.
+
+![Dow Jones Industrial Average Trend Analysis](TrendAnalysis.png)
+
