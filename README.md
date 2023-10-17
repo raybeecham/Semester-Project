@@ -35,3 +35,4 @@ This research offers a holistic perspective on stock market dynamics, providing 
 
 ![Dow Jones Industrial Average Trend Analysis](TrendAnalysis.png)
 
+I realized that the data is also behind so I've added a Last data from fetched data so you can see what date the data are being fetched. 
